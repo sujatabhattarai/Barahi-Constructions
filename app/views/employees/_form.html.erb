@@ -1,42 +1,41 @@
-<%= form_with(model: employee, local: true) do |form| %>
-  <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-      <ul>
+<% if employee.errors.any? %>
+    <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+    <ul>
       <% employee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+<% end %>
 
-  <div class="field">
+<%= form_for @employee do |form| %>
+  <p>
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :employee_first_name %>
-  </div>
+    <%= form.text_field :first_name %>
+  </p>
 
-  <div class="field">
+  <p>
     <%= form.label :last_name %>
     <%= form.text_field :last_name, id: :employee_last_name %>
-  </div>
+  </p>
 
-  <div class="field">
+  <p>
     <%= form.label :phn_num %>
-    <%= form.number_field :phn_num, id: :employee_phn_num %>
-  </div>
+    <%= form.text_field :phn_num, id: :employee_phn_num %>
+  </p>
 
-  <div class="field">
+  <p>
     <%= form.label :address %>
     <%= form.text_area :address, id: :employee_address %>
-  </div>
+  <p>
 
-  <div class="field">
+  <p>
     <%= form.label :email %>
     <%= form.text_area :email, id: :employee_email %>
-  </div>
+  </p>
 
-  <div class="actions">
+  <p>
     <%= form.submit %>
-  </div>
+  </p>
 <% end %>
