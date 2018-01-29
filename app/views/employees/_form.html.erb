@@ -1,13 +1,5 @@
 
-<% if employee.errors.any? %>
-    <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
-
-    <ul>
-      <% employee.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-      <% end %>
-    </ul>
-<% end %>
+<%= render 'shared/errors', obj: @employee %>
 
 <div class="row">
   <div class="col-xs-12">

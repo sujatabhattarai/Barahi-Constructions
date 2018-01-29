@@ -58,11 +58,19 @@ $navbar-default-bg: #ed6117;
   font-family: "Times New Roman";
 }
 
+.article-actions {
+  border-top: 1px solid orange;
+  padding-top: 5px;
+  margin-bottom: -5px;
+}
+
 .footer {
-  margin-top: 45px;
+  margin-top: 50px;
   padding-top: 5px;
   border-top: 1px solid orange;
   color: gray;
+  clear: both;
+
 }
 
 .list {
@@ -74,6 +82,15 @@ $navbar-default-bg: #ed6117;
 .list ul {
   list-style: none;
 }
+
+.show {
+  color: darkslategray;
+  font-family: "Diwan Kufi";
+  word-spacing: 7px;
+  padding-bottom: 15px;
+}
+
+
 /*.image {
   text-align: right;
   margin-top: -350px;
