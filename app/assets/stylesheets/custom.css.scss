@@ -1,2 +1,80 @@
+$navbar-default-bg: #ed6117;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: wheat;
+  text-transform: uppercase;
+  font-family: "Courier";
+  word-spacing: -8px;
+}
+
+#logo:hover {
+  color: darksalmon;
+  text-decoration: none;
+}
+
+#abc {
+  font-family: "Courier New";
+  color: wheat;
+  font-size: 1.2em;
+}
+
+#next {
+  font-family: "Courier New";
+  color: wheat;
+  font-size: 1.2em;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('Background4.png');
+  background-size: cover;
+  height: 750px;
+}
+
+.jumbotron h1 {
+  letter-spacing: -1.5px;
+  word-spacing: 9px;
+  color: darkslategray;
+  font-family: "Diwan Kufi";
+}
+
+/*.jumbotron h2 {
+  word-spacing: 3px;
+}*/
+
+.btn-xlarge {
+  margin-top: 150px;
+  background-color: darkslategray;
+  word-spacing: 3px;
+  font-size: 0.9em;
+  font-family: "Times New Roman";
+}
+
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid orange;
+  color: gray;
+}
+
+.list {
+  float: right;
+  color: darkblue;
+  padding-top: -45px;
+}
+
+.list ul {
+  list-style: none;
+}
+/*.image {
+  text-align: right;
+  margin-top: -350px;
+}*/
