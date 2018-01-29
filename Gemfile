@@ -12,8 +12,9 @@ gem 'rails', '~> 5.1.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
+
 gem 'jquery-rails'
+# Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,10 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'will_paginate','3.1.5'
+gem 'bootstrap-will_paginate','1.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rails-controller-testing'
 group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,9 +56,7 @@ group :development do
 end
 
 group :production do
-
-  gem 'pg', '~> 0.11'
-
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
