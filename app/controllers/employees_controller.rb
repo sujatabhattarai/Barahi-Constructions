@@ -49,6 +49,10 @@ class EmployeesController < ApplicationController
     redirect_to employees_path
   end
 
+  def sign_up
+
+  end
+
   private
 
     def set_employee
