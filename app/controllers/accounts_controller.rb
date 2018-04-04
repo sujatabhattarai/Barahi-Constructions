@@ -1,5 +1,7 @@
 class AccountsController < ApplicationController
 
+  before_action :set_account, only: [:show, :edit, :update, :destroy]
+
   def index
     @accounts = Account.all
   end
@@ -9,7 +11,6 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = Account.find(params[:id])
   end
 
   def create
@@ -23,7 +24,6 @@ class AccountsController < ApplicationController
   end
 
   def update
-    @account = Account.find(params[:id])
     if @account.update(account_params)
       flash[:success] = "The account information was successfully updated"
       redirect_to account_path(@account)
@@ -33,18 +33,20 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
   end
 
   def destroy
-    @account = Account.find(params[:id])
     @account.destroy
     flash[:danger] = "Account was successfully deleted"
     redirect_to accounts_path
   end
 
   private
-  def account_params
-    params.require(:account).permit(:customer_name, :total_amount, :amount_paid, :amount_due)
-  end
+    def set_account
+      @account = Account.find(params[:id])
+    end
+
+    def account_params
+      params.require(:account).permit(:customer_name, :total_amount, :amount_paid, :amount_due)
+    end
 end

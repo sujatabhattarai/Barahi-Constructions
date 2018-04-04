@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
 
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+
   def index
     @customers = Customer.all
   end
@@ -9,7 +11,7 @@ class CustomersController < ApplicationController
   end
 
   def edit
-    @customer = Customer.find(params[:id])
+
   end
 
   def create
@@ -24,7 +26,6 @@ class CustomersController < ApplicationController
   end
 
   def update
-    @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       flash[:success] = "The customer was successfully updated"
       redirect_to customer_path(@customer)
@@ -34,17 +35,20 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
     flash[:danger] = "The customer was successfully deleted"
     redirect_to customers_path
   end
 
   private
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
+
   def customer_params
     params.require(:customer).permit(:full_name, :phn_num, :address, :email)
   end
