@@ -1,7 +1,15 @@
 class EquipmentController < ApplicationController
 
+  def index
+    @equipments = Equipment.all
+  end
+
   def new
     @equipment = Equipment.new
+  end
+
+  def edit
+    @equipment = Equipment.find(params[:id])
   end
 
   def create
@@ -12,7 +20,16 @@ class EquipmentController < ApplicationController
     else
       render 'new'
     end
+  end
 
+  def update
+    @equipment = Equipment.find(params[:id])
+    if @equipment.update(equipment_params)
+      flash[:success] = "The equipment was successfully updated"
+      redirect_to equipment_path(@equipment)
+    else
+      render 'edit'
+    end
   end
 
   def show

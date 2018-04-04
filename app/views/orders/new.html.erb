@@ -1,24 +1,3 @@
 <h1 align="center"> Add New Order </h1>
-<%= render 'shared/errors', obj: @order %>
-<%= form_for @order do |f| %>
-    <p>
-      <%= f.label :equipment %><br/>
-      <%= f.text_field :equipment %>
-    </p>
 
-    <p>
-      <%= f.label :order_date %><br/>
-      <%= f.text_field :order_date %>
-    </p>
-
-
-
-    <p>
-      <%=  f.label :duration %><br/>
-      <%= f.text_field :duration %>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
+<%= render 'form', order: @order %>

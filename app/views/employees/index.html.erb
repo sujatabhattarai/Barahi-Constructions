@@ -2,6 +2,10 @@
   <h1>Listing all employees</h1>
 </div>
 
+<p style="font-size: 170%; text-align: right ">
+  <i style="margin-right: 4em; text-decoration: underline; color: #2E2F30"><%= link_to "Create new employee", new_employee_path  %></i>
+</p>
+
 <% @employees.each do |employee| %>
     <div class="row">
       <div class="col-xs-offset-2 col col-xs-9">
