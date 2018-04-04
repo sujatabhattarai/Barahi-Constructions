@@ -36,6 +36,13 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.find(params[:id])
   end
 
+  def destroy
+    @equipment = Equipment.find(params[:id])
+    @equipment.destroy
+    flash[:danger] = "The equipment was successfully deleted"
+    redirect_to equipment_index_path
+  end
+
   private
     def equipment_params
       params.require(:equipment).permit(:name, :equip_type, :make, :model, :serial_num,

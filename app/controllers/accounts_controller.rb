@@ -36,6 +36,13 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
   end
 
+  def destroy
+    @account = Account.find(params[:id])
+    @account.destroy
+    flash[:danger] = "Account was successfully deleted"
+    redirect_to accounts_path
+  end
+
   private
   def account_params
     params.require(:account).permit(:customer_name, :total_amount, :amount_paid, :amount_due)
