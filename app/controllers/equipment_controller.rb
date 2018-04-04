@@ -6,12 +6,17 @@ class EquipmentController < ApplicationController
 
   def create
     @equipment = Equipment.new(equipment_params)
-    @equipment.save
-    redirect_to equipment_show(@equipment)
+    if @equipment.save
+      flash[:success] = "New equipment was successfully added to the equipment table"
+      redirect_to equipment_path(@equipment)
+    else
+      render 'new'
+    end
+
   end
 
   def show
-
+    @equipment = Equipment.find(params[:id])
   end
 
   private

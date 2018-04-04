@@ -1,4 +1,5 @@
 <h1 align="center">Add New Equipment</h1>
+<%= render 'shared/errors', obj: @equipment %>
 <%= form_for @equipment do |f| %>
     <p>
       <%= f.label :name %><br/>

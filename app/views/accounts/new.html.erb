@@ -1,0 +1,29 @@
+<h1 align="center"> Add New Entry in Account </h1>
+<%= render 'shared/errors', obj: @account %>
+<%= form_for @account do |f| %>
+    <p>
+      <%= f.label :customer_name %><br/>
+      <%= f.text_field :customer_name %>
+    </p>
+
+    <p>
+      <%= f.label :total_amount %><br/>
+      <%= f.text_field :total_amount %>
+    </p>
+
+
+
+    <p>
+      <%=  f.label :amount_paid %><br/>
+      <%= f.text_field :amount_paid %>
+    </p>
+
+    <p>
+      <%=  f.label :amount_due %><br/>
+      <%= f.text_field :amount_due %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
